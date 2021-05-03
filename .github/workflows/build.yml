@@ -122,3 +122,9 @@ jobs:
         run: C:\msys64\usr\bin\bash -c -l 'cd "$GITHUB_WORKSPACE" && bash -e -x ./test_script.sh'
       - name: SQL Test
         run: C:\msys64\usr\bin\bash -c -l 'cd "$GITHUB_WORKSPACE" && bash -e -x ./test_sql.sh'
+      - name: Get Windows builds
+        uses: actions/upload-artifact@v2
+        with:
+          name: get-windows-builds
+          path: |
+            src/util/*.exe
